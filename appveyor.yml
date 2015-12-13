@@ -77,7 +77,7 @@ configuration: Release
 before_build:
   - appveyor DownloadFile https://dist.nuget.org/win-x86-commandline/v3.2.0-rc/nuget.exe
   - appveyor DownloadFile https://raw.githubusercontent.com/appveyor/ci/master/scripts/nuget-restore.cmd
-  - nuget-restore
+  - nuget-restore src\Gerrit.Api.sln
 
 # scripts to run after build
 after_build:
