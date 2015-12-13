@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Gerrit.Api\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,7 +45,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Changes\AbandonInput.cs" />
+    <Compile Include="Changes\AccountInfo.cs" />
+    <Compile Include="Changes\AccountInfoVote.cs" />
+    <Compile Include="Changes\ActionInfo.cs" />
+    <Compile Include="Changes\AddReviewerResult.cs" />
+    <Compile Include="Changes\ApprovalInfo.cs" />
+    <Compile Include="Changes\Avatar.cs" />
+    <Compile Include="Changes\ChangeEditInput.cs" />
+    <Compile Include="Changes\ChangeEditMessageInput.cs" />
+    <Compile Include="Changes\ChangeInfo.cs" />
+    <Compile Include="Changes\ChangeInfoMessage.cs" />
+    <Compile Include="Changes\ChangeInfoStatus.cs" />
+    <Compile Include="Changes\ChangeMessageInfo.cs" />
+    <Compile Include="Changes\CherryPickInput.cs" />
+    <Compile Include="Changes\CodeReviewLabel.cs" />
+    <Compile Include="Changes\Comment.cs" />
+    <Compile Include="Changes\CommentInfo.cs" />
+    <Compile Include="Changes\CommentInput.cs" />
+    <Compile Include="Changes\CommentRange.cs" />
+    <Compile Include="Changes\CommitInfo.cs" />
+    <Compile Include="Changes\DiffContent.cs" />
+    <Compile Include="Changes\DiffFileMetaInfo.cs" />
+    <Compile Include="Changes\DiffInfo.cs" />
+    <Compile Include="Changes\DiffIntralineInfo.cs" />
+    <Compile Include="Changes\DiffWebLinkInfo.cs" />
+    <Compile Include="Changes\EditFileInfo.cs" />
+    <Compile Include="Changes\EditInfo.cs" />
+    <Compile Include="Changes\FetchInfo.cs" />
+    <Compile Include="Changes\FileInfo.cs" />
+    <Compile Include="Changes\GitPersonInfo.cs" />
+    <Compile Include="Changes\GroupBaseInfo.cs" />
+    <Compile Include="Changes\IncludedInInfo.cs" />
+    <Compile Include="Changes\LabelInfo.cs" />
+    <Compile Include="Changes\Labels.cs" />
+    <Compile Include="Changes\MergeableInfo.cs" />
+    <Compile Include="Changes\ProblemInfo.cs" />
+    <Compile Include="Changes\RebaseInput.cs" />
+    <Compile Include="Changes\RelatedChangeAndCommitInfo.cs" />
+    <Compile Include="Changes\RelatedChangesInfo.cs" />
+    <Compile Include="Changes\RestoreInput.cs" />
+    <Compile Include="Changes\RevertInput.cs" />
+    <Compile Include="Changes\ReviewerInfo.cs" />
+    <Compile Include="Changes\ReviewerInput.cs" />
+    <Compile Include="Changes\ReviewInfo.cs" />
+    <Compile Include="Changes\ReviewInput.cs" />
+    <Compile Include="Changes\RevisionInfo.cs" />
+    <Compile Include="Changes\RuleInput.cs" />
+    <Compile Include="Changes\SubmitInfo.cs" />
+    <Compile Include="Changes\SubmitInput.cs" />
+    <Compile Include="Changes\SubmitRecord.cs" />
+    <Compile Include="Changes\SuggestedReviewerInfo.cs" />
+    <Compile Include="Changes\TopicInput.cs" />
+    <Compile Include="Changes\VerifiedLabel.cs" />
+    <Compile Include="Changes\WebLinkInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
