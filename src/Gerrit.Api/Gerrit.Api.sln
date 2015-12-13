@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerrit.Api", "Gerrit.Api.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerrit.Api.Domain", "..\Gerrit.Api.Domain\Gerrit.Api.Domain.csproj", "{8379667A-3512-4F0E-95E2-75994B474C6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerrit.Api.Tests", "..\Gerrit.Api.Tests\Gerrit.Api.Tests.csproj", "{86E47D77-3257-414B-AFA0-31B4CD0782F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerrit.Api.Tests", "..\Gerrit.Api.Tests\Gerrit.Api.Tests.csproj", "{BEA5B63B-BD97-4950-9B93-2C6034645E0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{8379667A-3512-4F0E-95E2-75994B474C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8379667A-3512-4F0E-95E2-75994B474C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8379667A-3512-4F0E-95E2-75994B474C6B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86E47D77-3257-414B-AFA0-31B4CD0782F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86E47D77-3257-414B-AFA0-31B4CD0782F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86E47D77-3257-414B-AFA0-31B4CD0782F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86E47D77-3257-414B-AFA0-31B4CD0782F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA5B63B-BD97-4950-9B93-2C6034645E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA5B63B-BD97-4950-9B93-2C6034645E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA5B63B-BD97-4950-9B93-2C6034645E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA5B63B-BD97-4950-9B93-2C6034645E0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
