@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerrit.Api", "Gerrit.Api.csproj", "{E93A562C-1030-439B-910E-79350AF7083E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerrit.Api", "Gerrit.Api\Gerrit.Api.csproj", "{E93A562C-1030-439B-910E-79350AF7083E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerrit.Api.Domain", "..\Gerrit.Api.Domain\Gerrit.Api.Domain.csproj", "{8379667A-3512-4F0E-95E2-75994B474C6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerrit.Api.Domain", "Gerrit.Api.Domain\Gerrit.Api.Domain.csproj", "{8379667A-3512-4F0E-95E2-75994B474C6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerrit.Api.Tests", "..\Gerrit.Api.Tests\Gerrit.Api.Tests.csproj", "{BEA5B63B-BD97-4950-9B93-2C6034645E0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerrit.Api.Tests", "Gerrit.Api.Tests\Gerrit.Api.Tests.csproj", "{BEA5B63B-BD97-4950-9B93-2C6034645E0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

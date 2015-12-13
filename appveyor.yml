@@ -1,0 +1,124 @@
+# Notes:
+#   - Minimal appveyor.yml file is an empty file. All sections are optional.
+#   - Indent each level of configuration with 2 spaces. Do not use tabs!
+#   - All section names are case-sensitive.
+#   - Section names should be unique on each level.
+
+#---------------------------------#
+#      general configuration      #
+#---------------------------------#
+
+# version format
+version: 1.0.{build}
+
+# you can use {branch} name in version format too
+# version: 1.0.{build}-{branch}
+
+# branches to build
+branches:
+  # whitelist
+  only:
+    - master
+    - production
+
+  # blacklist
+  #except:
+  #  - gh-pages
+
+# Do not build on tags (GitHub only)
+skip_tags: true
+
+# build cache to preserve files/folders between builds
+cache:
+  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+
+# Automatically register private account and/or project AppVeyor NuGet feeds.
+nuget:
+  account_feed: true
+  project_feed: true
+  disable_publish_on_pr: true     # disable publishing of .nupkg artifacts to
+                                  # account/project feeds for pull request builds
+
+#---------------------------------#
+#       build configuration       #
+#---------------------------------#
+
+# build platform, i.e. x86, x64, Any CPU. This setting is optional.
+platform: Any CPU
+
+# to add several platforms to build matrix:
+#platform:
+#  - x86
+#  - Any CPU
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+# to add several configurations to build matrix:
+#configuration:
+#  - Debug
+#  - Release
+
+#build:
+#  parallel: true                  # enable MSBuild parallel builds
+#  project: MyTestAzureCS.sln      # path to Visual Studio solution or project
+#  publish_wap: true               # package Web Application Projects (WAP) for Web Deploy
+#  publish_wap_xcopy: true         # package Web Application Projects (WAP) for XCopy deployment
+#  publish_azure: true             # package Azure Cloud Service projects and push to artifacts
+#  publish_nuget: true             # package projects with .nuspec files and push to artifacts
+#  publish_nuget_symbols: true     # generate and publish NuGet symbol packages
+#  include_nuget_references: true  # add -IncludeReferencedProjects option while packaging NuGet artifacts
+
+  # MSBuild verbosity level
+  #verbosity: quiet|minimal|normal|detailed
+
+
+# scripts to run before build
+before_build:
+  - appveyor DownloadFile https://dist.nuget.org/win-x86-commandline/v3.2.0-rc/nuget.exe
+  - appveyor DownloadFile https://raw.githubusercontent.com/appveyor/ci/master/scripts/nuget-restore.cmd
+  - nuget-restore
+
+# scripts to run after build
+after_build:
+
+# to run your custom scripts instead of automatic MSBuild
+build_script:
+
+# to disable automatic builds
+#build: off
+
+#---------------------------------#
+#       tests configuration       #
+#---------------------------------#
+
+#test:
+#  assemblies:
+#    - asm1.dll
+#    - asm2.dll
+
+#  categories:
+#    - UI
+#    - E2E
+
+# to run tests from different categories as separate jobs in parallel
+#test:
+#  categories:
+#    - A            # A category common for all jobs
+#    - [UI]         # 1st job
+#    - [DAL, BL]    # 2nd job
+
+# scripts to run before tests
+#before_test:
+#  - echo script1
+#  - ps: Write-Host "script1"
+
+# scripts to run after tests
+after_test:
+
+# to run your custom scripts instead of automatic tests
+test_script:
+#  - echo This is my custom test script
+
+# to disable automatic tests 
+#test: off
