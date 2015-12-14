@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("Gerrit.Api.Domain")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Gerrit.Api.Domain")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Costin Zaharia, Tamás Wagner")]
 [assembly: AssemblyProduct("Gerrit.Api.Domain")]
