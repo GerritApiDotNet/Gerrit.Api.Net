@@ -34,7 +34,6 @@ build:
   publish_nuget: true
   
 after_build:
-  - nuget pack src\Gerrit.Api\Gerrit.Api -Version %appveyor_build_version%
   - appveyor PushArtifact Gerrit.Api.%appveyor_build_version%.nupkg  
   
 deploy:
