@@ -25,7 +25,7 @@ deploy:
   provider: NuGet
   api_key:
     secure: 5fkjdFMJQ6JeFcST9Jqgv5Du09z8/ayuIE6lb6ExDMSQ0SqdJKRsC5xxRo8nrHpS
-  artifact: '\src\Gerrit.Api*\**\*.nupkg'
+  artifact: /.*\.nupkg/
 
 artifacts:
   - path: '\src\Gerrit.Api*\**\*.nupkg'
