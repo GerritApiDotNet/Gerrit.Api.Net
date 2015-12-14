@@ -8,7 +8,7 @@ platform: Any CPU
 configuration: Release
 
 before_build:
-  - nuget restore
+  - nuget restore src\Gerrit.Api.sln
   
 build:
   publish_nuget: true
