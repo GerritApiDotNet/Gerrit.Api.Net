@@ -36,7 +36,7 @@ namespace Gerrit.Api.Domain.Changes
         /// <summary>
         ///     The range of the comment as a CommentRange entity.
         /// </summary>
-        public string Range { get; set; }
+        public CommentRange Range { get; set; }
 
         /// <summary>
         ///     The URL encoded UUID of the comment to which this comment is a reply.
