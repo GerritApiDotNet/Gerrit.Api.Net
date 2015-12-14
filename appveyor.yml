@@ -13,8 +13,8 @@ before_build:
 build:
   
 after_build:
-  - nuget pack src\Gerrit.Api.Domain\Gerrit.Api.Domain.csproj -Version %appveyor_build_version%
-  - nuget pack src\Gerrit.Api\Gerrit.Api.csproj -Version %appveyor_build_version%
+  - nuget pack src\Gerrit.Api.Domain\Gerrit.Api.Domain.nuspec -Version %appveyor_build_version%
+  - nuget pack src\Gerrit.Api\Gerrit.Api.nuspec -Version %appveyor_build_version%
   
   
 deploy:
