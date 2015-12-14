@@ -1,43 +1,25 @@
-# version format
 version: 1.0.{build}
 
-# branches to build
-branches:
-  only:
-    - master
-    - production
-
-# Do not build on tags (GitHub only)
-skip_tags: true
-
-# build cache to preserve files/folders between builds
 cache:
-  - src\packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+  - src\packages -> **\packages.config
 
-# Automatically register private account and/or project AppVeyor NuGet feeds.
-nuget:
-  account_feed: true
-  project_feed: true
-
-# build platform, i.e. x86, x64, Any CPU. This setting is optional.
 platform: Any CPU
 
-# build Configuration, i.e. Debug, Release, etc.
 configuration: Release
 
 before_build:
-  - appveyor DownloadFile https://dist.nuget.org/win-x86-commandline/v3.2.0-rc/nuget.exe
-  - appveyor DownloadFile https://raw.githubusercontent.com/appveyor/ci/master/scripts/nuget-restore.cmd
-  - nuget-restore src\Gerrit.Api.sln
+  - nuget restore
   
 build:
   publish_nuget: true
   
 after_build:
-  - appveyor PushArtifact Gerrit.Api.%appveyor_build_version%.nupkg  
   
 deploy:
   provider: NuGet
   api_key:
     secure: 2195ba75-c692-436e-af9d-5e5af9b01f25
   artifact: /.*\.nupkg/
+
+artifacts:
+  - path: '**\*.nupkg'
