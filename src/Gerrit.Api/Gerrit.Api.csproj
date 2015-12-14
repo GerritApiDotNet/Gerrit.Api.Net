@@ -76,6 +76,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>ConfigurationSettings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Gerrit.Api.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
