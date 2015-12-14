@@ -18,7 +18,6 @@ cache:
 nuget:
   account_feed: true
   project_feed: true
-  disable_publish_on_pr: true     # disable publishing of .nupkg artifacts to
 
 # build platform, i.e. x86, x64, Any CPU. This setting is optional.
 platform: Any CPU
@@ -30,6 +29,13 @@ before_build:
   - appveyor DownloadFile https://dist.nuget.org/win-x86-commandline/v3.2.0-rc/nuget.exe
   - appveyor DownloadFile https://raw.githubusercontent.com/appveyor/ci/master/scripts/nuget-restore.cmd
   - nuget-restore src\Gerrit.Api.sln
+  
+build:
+  publish_nuget: true
+  
+after_build:
+  - nuget pack src\Gerrit.Api\Gerrit.Api -Version %appveyor_build_version%
+  - appveyor PushArtifact Gerrit.Api.%appveyor_build_version%.nupkg  
   
 deploy:
   provider: NuGet
