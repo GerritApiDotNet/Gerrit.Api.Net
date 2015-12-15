@@ -49,13 +49,7 @@
   <ItemGroup>
     <Compile Include="Authentication\DigestAuthenticator.cs" />
     <Compile Include="Common\Extensions\StringBuilderExtensions.cs" />
-    <Compile Include="Common\Settings\ConfigurationProvider.cs" />
-    <Compile Include="Common\Settings\ConfigurationSettings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>ConfigurationSettings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Common\Settings\GerritConfiguration.cs" />
+    <Compile Include="Common\Configuration\GerritConfiguration.cs" />
     <Compile Include="Endpoints\Changes\ChangeOptionalParameters.cs" />
     <Compile Include="Endpoints\Changes\ChangeQueryParameters.cs" />
     <Compile Include="Endpoints\Changes\ChangeQueryStringBuilder.cs" />
@@ -74,10 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Common\Settings\ConfigurationSettings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>ConfigurationSettings.Designer.cs</LastGenOutput>
-    </None>
     <None Include="Gerrit.Api.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>

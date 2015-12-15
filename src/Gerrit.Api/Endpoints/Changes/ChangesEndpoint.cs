@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Gerrit.Api.Common.Configuration;
 using Gerrit.Api.Domain.Changes;
 using RestSharp;
 
@@ -6,7 +7,11 @@ namespace Gerrit.Api.Endpoints.Changes
 {
     public class ChangesEndpoint : EndpointBase, IChangesEndpoint
     {
-        private readonly ChangeQueryStringBuilder queryStringBuilder = new ChangeQueryStringBuilder();
+        private readonly ChangeQueryStringBuilder _queryStringBuilder = new ChangeQueryStringBuilder();
+
+        public ChangesEndpoint(GerritConfiguration configuration) : base(configuration)
+        {
+        }
 
         public List<ChangeInfo> GetAll(ChangeQueryParameters queryParameters, ChangeOptionalParameters optionalParameters)
         {
@@ -64,7 +69,7 @@ namespace Gerrit.Api.Endpoints.Changes
 
         private RestRequest GetRestRequest(string url, ChangeQueryParameters queryParameters, ChangeOptionalParameters optionalParameters)
         {
-            var queryString = queryStringBuilder.GetQueryString(queryParameters, optionalParameters);
+            var queryString = _queryStringBuilder.GetQueryString(queryParameters, optionalParameters);
             return new RestRequest($"{url}/{queryString}", Method.GET);
         }
     }

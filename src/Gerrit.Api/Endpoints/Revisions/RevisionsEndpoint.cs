@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Gerrit.Api.Common.Configuration;
 using Gerrit.Api.Domain.Changes;
 using RestSharp;
 
@@ -6,6 +7,10 @@ namespace Gerrit.Api.Endpoints.Revisions
 {
     public class RevisionsEndpoint : EndpointBase, IRevisionsEndpoint
     {
+        public RevisionsEndpoint(GerritConfiguration configuration) : base(configuration)
+        {
+        }
+
         public CommitInfo GetCommit(string changeId, string revisionId)
         {
             var restRequest = new RestRequest($"/changes/{changeId}/revisions/{revisionId}/commit", Method.GET);

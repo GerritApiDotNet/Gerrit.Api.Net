@@ -1,4 +1,4 @@
-﻿namespace Gerrit.Api.Common.Settings
+﻿namespace Gerrit.Api.Common.Configuration
 {
     public class GerritConfiguration
     {

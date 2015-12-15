@@ -1,5 +1,5 @@
 ﻿using Gerrit.Api.Authentication;
-using Gerrit.Api.Common.Settings;
+using Gerrit.Api.Common.Configuration;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -7,14 +7,19 @@ namespace Gerrit.Api.Endpoints
 {
     public class EndpointBase
     {
+        private readonly GerritConfiguration _configuration;
         private const string SecurityPrefix = ")]}'";
+
+        public EndpointBase(GerritConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
 
         public TEntity ExecuteRequest<TEntity>(RestRequest restRequest)
         {
-            var configuration = ConfigurationProvider.Instance.GetConfiguration();
-            var restClient = new RestClient(configuration.GerritApiUrl)
+            var restClient = new RestClient(_configuration.GerritApiUrl)
             {
-                Authenticator = new DigestAuthenticator(configuration.UserName, configuration.Password)
+                Authenticator = new DigestAuthenticator(_configuration.UserName, _configuration.Password)
             };
 
             var response = restClient.Execute(restRequest);
