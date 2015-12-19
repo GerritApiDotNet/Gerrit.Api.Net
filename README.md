@@ -5,14 +5,12 @@ Installation
 ------------
 
 NuGet:
-```
-Install-Package Gerrit.Api
-```
+>Install-Package Gerrit.Api
 
 Examples
 --------
 
-```
+```C#
 var gerritConfiguration = new GerritConfiguration("username", "password", "gerrit url");
 var changesEndPoint = new ChangesEndpoint(gerritConfiguration);
 
