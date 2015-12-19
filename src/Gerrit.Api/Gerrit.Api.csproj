@@ -50,12 +50,13 @@
     <Compile Include="Authentication\DigestAuthenticator.cs" />
     <Compile Include="Common\Extensions\StringBuilderExtensions.cs" />
     <Compile Include="Common\Configuration\GerritConfiguration.cs" />
+    <Compile Include="Endpoints\Runner\IRestRequestRunner.cs" />
+    <Compile Include="Endpoints\Runner\RestRequestRunner.cs" />
     <Compile Include="Endpoints\Changes\ChangeOptionalParameters.cs" />
     <Compile Include="Endpoints\Changes\ChangeQueryParameters.cs" />
     <Compile Include="Endpoints\Changes\ChangeQueryStringBuilder.cs" />
     <Compile Include="Endpoints\Changes\ChangesEndpoint.cs" />
     <Compile Include="Endpoints\Changes\IChangesEndpoint.cs" />
-    <Compile Include="Endpoints\EndpointBase.cs" />
     <Compile Include="Endpoints\Revisions\IRevisionsEndpoint.cs" />
     <Compile Include="Endpoints\Revisions\RevisionsEndpoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

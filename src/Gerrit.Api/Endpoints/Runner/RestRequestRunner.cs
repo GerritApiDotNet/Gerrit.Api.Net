@@ -3,26 +3,24 @@ using Gerrit.Api.Common.Configuration;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace Gerrit.Api.Endpoints
+namespace Gerrit.Api.Endpoints.Runner
 {
-    public class EndpointBase
+    public class RestRequestRunner : IRestRequestRunner
     {
-        private readonly GerritConfiguration _configuration;
+        private readonly IRestClient _restClient;
         private const string SecurityPrefix = ")]}'";
 
-        public EndpointBase(GerritConfiguration configuration)
+        public RestRequestRunner(GerritConfiguration gerritConfiguration)
         {
-            _configuration = configuration;
+            _restClient = new RestClient(gerritConfiguration.GerritApiUrl)
+            {
+                Authenticator = new DigestAuthenticator(gerritConfiguration.UserName, gerritConfiguration.Password)
+            };
         }
 
-        public TEntity ExecuteRequest<TEntity>(RestRequest restRequest)
+        public TEntity ExecuteRequest<TEntity>(string resource, Method method)
         {
-            var restClient = new RestClient(_configuration.GerritApiUrl)
-            {
-                Authenticator = new DigestAuthenticator(_configuration.UserName, _configuration.Password)
-            };
-
-            var response = restClient.Execute(restRequest);
+            var response = _restClient.Execute(new RestRequest(resource, method));
             var json = GetJson(response.Content);
 
             return JsonConvert.DeserializeObject<TEntity>(json);
