@@ -11,7 +11,8 @@ namespace Gerrit.Api.Endpoints.Changes
         private readonly IRestRequestRunner _requestRunner;
         private readonly ChangeQueryStringBuilder _queryStringBuilder = new ChangeQueryStringBuilder();
 
-        public ChangesEndpoint(GerritConfiguration gerritConfiguration) : this(new RestRequestRunner(gerritConfiguration))
+        public ChangesEndpoint(GerritConfiguration gerritConfiguration)
+            : this(new RestRequestRunner(gerritConfiguration))
         {
         }
 

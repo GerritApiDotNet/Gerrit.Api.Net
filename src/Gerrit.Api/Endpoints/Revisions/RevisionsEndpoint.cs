@@ -10,7 +10,8 @@ namespace Gerrit.Api.Endpoints.Revisions
     {
         private readonly IRestRequestRunner _restRequestRunner;
 
-        public RevisionsEndpoint(GerritConfiguration gerritConfiguration) : this(new RestRequestRunner(gerritConfiguration))
+        public RevisionsEndpoint(GerritConfiguration gerritConfiguration) 
+            : this(new RestRequestRunner(gerritConfiguration))
         {
         }
 
